@@ -11,7 +11,7 @@ before:
     - go generate ./...
 
 builds:
-    skip: true
+  - skip: true
 
 archives:
 - replacements:
