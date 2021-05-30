@@ -1,0 +1,35 @@
+# Documentation at http://goreleaser.com
+before:
+  hooks:
+    # format the code
+    - go fmt ./...
+    # clean up dependencies
+    - go mod tidy
+    # download all modules
+    - go mod download
+    # execute code generation
+    - go generate ./...
+
+builds:
+    skip: true
+
+archives:
+- replacements:
+    darwin: Darwin
+    linux: Linux
+    windows: Windows
+    386: i386
+    amd64: x86_64
+
+checksum:
+  name_template: 'checksums.txt'
+
+snapshot:
+  name_template: "{{ .Tag }}-SNAPSHOT-{{.ShortCommit}}"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - '^test:'
