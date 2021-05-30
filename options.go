@@ -85,7 +85,7 @@ type pageOptions struct {
 	NoCustomHeaderPropagation boolOption   // Do not add HTTP headers specified by --custom-header for each resource request
 	NoImages                  boolOption   // Do not load or print images
 	NoStopSlowScripts         boolOption   // Do not Stop slow running javascripts
-	PageOffset                stringOption   // Set the starting page number (default 0)
+	PageOffset                stringOption // Set the starting page number (default 0)
 	Password                  stringOption // HTTP Authentication password
 	Post                      mapOption    // Add an additional post field (repeatable)
 	PostFile                  mapOption    // Post an additional file (repeatable)
